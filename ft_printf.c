@@ -6,7 +6,7 @@
 /*   By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:53:06 by juanrome          #+#    #+#             */
-/*   Updated: 2025/01/08 21:50:55 by juanrome         ###   ########.fr       */
+/*   Updated: 2025/01/09 19:43:14 by juanrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ int	ft_check(va_list args, char c)
 	else if (c == 'X')
 		re = ft_puthex_upp(va_arg(args, unsigned int));
 	else if (c == 'p')
-	{
-		re = ft_putstr("0x");
-		re += ft_putmemadress(va_arg(args, unsigned long long));
-	}
+		re = ft_putmemadress(va_arg(args, void *));
 	else if (c == 'u')
 		re = ft_putunbr(va_arg(args, unsigned int));
 	else if (c == '%')
@@ -59,7 +56,6 @@ int	ft_printf(const char *str, ...)
 			re += ft_putchar(str[i]);
 		i++;
 	}
-
 	va_end(args);
 	return (re);
 }

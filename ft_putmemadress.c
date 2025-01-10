@@ -6,29 +6,24 @@
 /*   By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:24:51 by juanrome          #+#    #+#             */
-/*   Updated: 2025/01/09 18:25:48 by juanrome         ###   ########.fr       */
+/*   Updated: 2025/01/09 20:27:59 by juanrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putmemadress(unsigned long nb)
+int	ft_putmemadress(void *nb)
 {
-	int		re;
-	char	*base;
+	unsigned long long	a;
+	int					ln;
 
-	re = 0;
-	base = "0123456789abcdef";
-	if (nb == 0)
+	ln = 0;
+	a = (unsigned long long)nb;
+	if (!nb)
 	{
-		return (write(1, ("(nil)"), 5));
+		return (ft_putstr("(nil)"));
 	}
-
-	if (nb >= 16)
-	{
-		re += ft_putmemadress(nb / 16);
-	}
-		re += ft_putchar(base[nb % 16]);
-		
-	return (re);
+	ln += ft_putstr("0x");
+	ln += ft_puthex_min(a);
+	return (ln);
 }
