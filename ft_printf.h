@@ -6,7 +6,7 @@
 /*   By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:55:34 by juanrome          #+#    #+#             */
-/*   Updated: 2025/01/09 19:39:36 by juanrome         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:26:46 by juanrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ int	ft_puthex_upp(unsigned long long nb);
 int	ft_putmemadress(void *ptr);
 int	ft_printf(const char *str, ...);
 
-#endif // FT_PRINT_H
+#endif

@@ -6,7 +6,7 @@
 /*   By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:16:31 by juanrome          #+#    #+#             */
-/*   Updated: 2025/01/06 18:51:15 by juanrome         ###   ########.fr       */
+/*   Updated: 2025/02/21 21:57:41 by juanrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putunbr(unsigned int nb)
 {
-	unsigned int	re;
+	int re;
 
 	re = 0;
 	if (nb > 9)
@@ -23,6 +23,6 @@ int	ft_putunbr(unsigned int nb)
 		re += ft_putunbr(nb % 10);
 	}
 	else
-		re += ft_putchar(nb + 48);
+		re += ft_putchar(nb + '0');
 	return (re);
 }
