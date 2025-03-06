@@ -6,7 +6,7 @@
 #    By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 17:02:51 by juanrome          #+#    #+#              #
-#    Updated: 2025/01/06 18:51:18 by juanrome         ###   ########.fr        #
+#    Updated: 2025/03/06 15:43:19 by juanrome         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,12 @@ CFLAGS = -Wall -Werror -Wextra -g
 
 SRCS = ft_printf.c ft_putmemadress.c ft_putunbr.c ft_putstr.c ft_putnbr.c ft_putchar.c ft_puthex_min.c ft_puthex_upp.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
 INCLUDE = ft_printf.h
 
 AR = ar rcs
 RM = rm -f
-
-.PHONY: all clean fclean re
 
 all: $(NAME)
 
@@ -40,3 +38,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

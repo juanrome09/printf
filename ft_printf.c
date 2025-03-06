@@ -6,7 +6,7 @@
 /*   By: juanrome <juanrome@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:53:06 by juanrome          #+#    #+#             */
-/*   Updated: 2025/03/04 15:40:26 by juanrome         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:55:24 by juanrome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	re = 0;
 	i = 0;
+	if (!str)
+		return (-1);
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -59,26 +61,27 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (re);
 }
-// int main()
-// {
-// 	int d = -2147483648;
-// 	int i = 12;
-// 	char c = '3';
-// 	char *s = "holanda";
-// 	int u = 4294967295;	
-// 	printf("numeros %d %i\n", d, i);
-// 	ft_printf("numeros %d %i\n", d, i);
-// 	printf("caracteres %c\n", c);
-// 	ft_printf("caracteres %c\n", c);
-// 	printf("strings %s\n", s);
-// 	ft_printf("strings %s\n", s);
-// 	printf("hexa %x\n", d);
-// 	ft_printf("hexa %x\n", d);
-// 	printf("puntero %p\n", s);
-// 	ft_printf("puntero %p\n", s);
-// 	printf("unbr %u\n", u);
-// 	ft_printf("unbr %u\n", u);
-// 	printf("porcentaje %%\n");
-// 	ft_printf("porcentaje %%\n");
-// 	return 0;
-// 	}
+/* int main()
+{
+	int d = -2147483648;
+	int i = 12;
+	char c = '3';
+	char *s = "holanda";
+	int u = 4294967295;
+		
+	printf("numeros %d %i\n", d, i);
+	ft_printf("numeros %d %i\n", d, i);
+	printf("caracteres %c\n", c);
+	ft_printf("caracteres %c\n", c);
+	printf("strings %s\n", s);
+	ft_printf("strings %s\n", s);
+	printf("hexa %x\n", d);
+	ft_printf("hexa %x\n", d);
+	printf("puntero %p\n", s);
+	ft_printf("puntero %p\n", s);
+	printf("unbr %u\n", u);
+	ft_printf("unbr %u\n", u);
+	printf("porcentaje %%\n");
+	ft_printf("porcentaje %%\n");
+	return 0;
+	}*/
